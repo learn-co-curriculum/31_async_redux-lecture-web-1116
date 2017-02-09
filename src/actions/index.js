@@ -1,16 +1,26 @@
-let counter = 4
+import axios from 'axios'
 
 export function addNote(noteTitle){
+  const note = axios.post('http://localhost:3000/api/v1/notes', {title: noteTitle, body: ''} )
+    .then( response => response.data )
+
   return {
     type: 'ADD_NOTE',
-    payload: {title: noteTitle, body: '', id: counter++ }
+    payload: note
   }
 }
 
 export function fetchNotes(){
-  const notes = [{id: 1, title: "React", body: ""}, {id: 2, title: "Redux", body: ""}, {id: 3, title: "Dan Abramov", body: ""}]
+  const notes = axios.get('http://localhost:3000/api/v1/notes').then(response => response.data)
   return {
     type: 'FETCH_NOTES',
     payload: notes
+  }
+}
+
+export function updateCurrentNote(noteId){
+  return {
+    type: 'UPDATE_CURRENT_NOTE',
+    payload: noteId
   }
 }

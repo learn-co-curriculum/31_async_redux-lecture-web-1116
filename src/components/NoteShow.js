@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 function NoteShow( props ){
   return (
     <div>
-      { props.note.title }
+      <h2>{ props.note.title }</h2>
     </div>)
 }
 
