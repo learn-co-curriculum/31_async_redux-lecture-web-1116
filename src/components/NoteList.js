@@ -15,7 +15,7 @@ class NoteList extends React.Component {
       <div>
         <h2>All Notes</h2>
         <ul>
-          { notes.map((note, i) => <li key={i}>{note}</li> ) }
+          { notes.map((note, i) => <li key={i}>{ note.title  }</li> ) }
         </ul>
       </div>)
   }

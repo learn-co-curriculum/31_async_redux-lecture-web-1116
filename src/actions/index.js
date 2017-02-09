@@ -1,7 +1,7 @@
-export function addNote(note){
+export function addNote(noteTitle){
   return {
     type: 'ADD_NOTE',
-    payload: note
+    payload: {title: noteTitle, body: ''}
   }
 }
 
