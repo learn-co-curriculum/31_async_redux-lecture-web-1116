@@ -1,7 +1,9 @@
+let counter = 4
+
 export function addNote(noteTitle){
   return {
     type: 'ADD_NOTE',
-    payload: {title: noteTitle, body: ''}
+    payload: {title: noteTitle, body: '', id: counter++ }
   }
 }
 

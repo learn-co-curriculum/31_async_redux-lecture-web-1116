@@ -22,6 +22,7 @@ class NoteList extends React.Component {
 }
 
 function mapStateToProps (state){
+  console.log( state )
   return {
     notes: state.notes
   }

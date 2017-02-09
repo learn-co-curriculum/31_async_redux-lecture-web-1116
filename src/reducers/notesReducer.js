@@ -3,7 +3,7 @@ export default function(state=[], action){
     case 'FETCH_NOTES':
       return action.payload
     case 'ADD_NOTE':
-      return [...state, action.payload]
+      return [...state, action.payload ]
     case 'UPDATE_NOTE':
       return state.map(note => {
         if (note.id === action.payload.id) {
